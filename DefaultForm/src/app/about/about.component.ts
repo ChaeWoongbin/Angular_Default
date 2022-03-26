@@ -12,4 +12,9 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
+  click_OpenWeb(str: string): void{
+    var url = "http://www.google.com/search?q=" + str;
+    window.open(url, "_blank");
+  }
 }
