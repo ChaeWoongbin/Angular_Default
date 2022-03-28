@@ -20,3 +20,7 @@
 .logo-nav{
     height: 50px;
 }
+
+.nav-link:disabled{
+    background-color: #703c3c;
+}
