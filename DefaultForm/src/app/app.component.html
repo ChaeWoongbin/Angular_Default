@@ -10,18 +10,18 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto"><!--me-auto : e->s 메뉴 좌측 정렬 -->
         <li class="nav-item active">
-          <a class="nav-link" routerLink="home">Home</a>
+          <a class="nav-link" [routerLink]="[{outlets: {primary: ['home'], sidebar: null}}]">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="intro">Intro</a>
+          <a class="nav-link" [routerLink]="[{outlets: {primary: ['intro'], sidebar: null}}]">Intro</a>
         </li>
        
         <li class="nav-item">
-          <a class="nav-link" routerLink="joinnow">JoinNow</a>
+          <a class="nav-link" [routerLink]="[{outlets: {primary: ['joinnow'], sidebar: null}}]">JoinNow</a>
         </li>
         
         <li class="nav-item">
-          <a class="nav-link" routerLink="about">About</a>
+          <a class="nav-link" [routerLink]="[{outlets: {primary: ['about'], sidebar: null}}]">About</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -39,7 +39,7 @@
           <a class="nav-link link-gray">|</a>
         </li>
         <li class="nav-item link-gray">
-          <a class="nav-link" routerLink="list">List(사이드바 작업)</a>
+          <a class="nav-link"  [routerLink]="[{outlets: {primary: ['list'], sidebar: 'home'}}]">List(사이드바 작업)</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled">Disabled</a>
@@ -51,14 +51,21 @@
   </div>
 </nav>
 
- <div class="container-fluid">
-   <div class="main">     
-    <router-outlet></router-outlet>
-   </div>
-   <div class="sidebar-right">         
-  <router-outlet name="sidebar"></router-outlet>
-   </div>
- </div>
+
+<router-outlet></router-outlet>
+<router-outlet name="sidebar"></router-outlet>
+<!-- 
+ <tr>
+   <td>
+    <div class="main">     
+      <router-outlet></router-outlet>
+     </div>
+   </td> <td>
+    <div class="main">     
+      <router-outlet name="sidebar"></router-outlet>
+     </div>
+   </td>
+ </tr> -->
 
 
   <footer class="text-center">
