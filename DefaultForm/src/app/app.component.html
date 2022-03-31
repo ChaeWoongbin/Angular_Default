@@ -50,7 +50,16 @@
      
   </div>
 </nav>
-  <router-outlet></router-outlet>
+
+ <div class="container-fluid">
+   <div class="main">     
+    <router-outlet></router-outlet>
+   </div>
+   <div class="sidebar-right">         
+  <router-outlet name="sidebar"></router-outlet>
+   </div>
+ </div>
+
 
   <footer class="text-center">
     <p>&copy; Angular-Default 2022. all right reserved</p>
